@@ -1,7 +1,7 @@
 import os
 import torch
 from torch.utils.data import DataLoader
-from models.faster_rcnn import get_model
+from models.faster_rcnn import get_hmaytsf_baseline_model as get_model
 from datasets.custom_dataset import CustomDataset
 from utils.transforms import get_transform
 from utils.visualization import plot_training_history
