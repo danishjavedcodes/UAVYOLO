@@ -334,7 +334,7 @@ if __name__ == "__main__":
     ANNOTATION_FILE_EVAL = "./data/SAR/valid/_annotations.coco.json"
     MODEL_PATH = "./object_detection_model_SAR_data.pth"
 
-    NUM_CLASSES = 3
+    NUM_CLASSES = 5
     BATCH_SIZE = 4
     DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 

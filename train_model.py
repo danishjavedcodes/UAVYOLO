@@ -29,7 +29,7 @@ if __name__ == "__main__":
     RESULTS_DIR = "results"
 
     # Hyperparameters
-    NUM_CLASSES = 3
+    NUM_CLASSES = 5
     BATCH_SIZE = 16
     NUM_EPOCHS = 150
     LEARNING_RATE = 0.005
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     optimizer = optim.SGD([p for p in model.parameters() if p.requires_grad], lr=LEARNING_RATE, momentum=0.9, weight_decay=0.0005)
 
     # Start training and evaluation
-    train_model(model, train_loader, eval_loader, optimizer, DEVICE, NUM_EPOCHS, RESULTS_DIR)
+    train_model(model, train_loader, eval_loader, optimizer, DEVICE, NUM_EPOCHS, RESULTS_DIR, ANNOTATION_FILE_EVAL)
 
     # Save the final trained model
     torch.save(model.state_dict(), MODEL_PATH)

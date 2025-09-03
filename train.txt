@@ -1,0 +1,4 @@
+Device: cuda
+Model initialized successfully.
+Epoch 1/150, Average Training Loss: 1.2322
+Checkpoint saved at: results/model_epoch_1.pth

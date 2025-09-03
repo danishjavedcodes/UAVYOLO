@@ -5,18 +5,18 @@ from PIL import Image  # Import the Image module from Pillow <button class="cita
 from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 # Import custom modules
-from models.faster_rcnn import get_model
+from models.faster_rcnn import get_hmaytsf_baseline_model as get_model
 from utils.transforms import get_transform
 from utils.inference import measure_inference_time
 
 # Paths
-ROOT_DIR_EVAL = "/home/danish/Desktop/Danish's/YOLO_NR/data/SAR/valid"
-ANNOTATION_FILE_EVAL = "/home/danish/Desktop/Danish's/YOLO_NR/data/SAR/valid/_annotations.coco.json"
-MODEL_PATH = "/home/danish/Desktop/Danish's/YOLO_NR/object_detection_model_SAR_data.pth"
+ROOT_DIR_EVAL = "./Aerial-Vehicles-1/valid"
+ANNOTATION_FILE_EVAL = "./Aerial-Vehicles-1/valid/_annotations.coco.json"
+MODEL_PATH = "/workspace/UAVYOLO/results/model_epoch_1.pth"
 # MODEL_PATH = "/home/danish/Desktop/Danish's/YOLO_NR/results/model_epoch_21.pth"
 
 # Hyperparameters
-NUM_CLASSES = 3  # Update based on your dataset (e.g., 71 categories + background)
+NUM_CLASSES = 5  # Update based on your dataset (e.g., 71 categories + background)
 BATCH_SIZE = 1
 DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
