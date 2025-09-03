@@ -1,4 +1,4 @@
-!pip install roboflow
+# !pip install roboflow
 
 from roboflow import Roboflow
 rf = Roboflow(api_key="q2GjuCzvnvJUnJ3GNWWt")
