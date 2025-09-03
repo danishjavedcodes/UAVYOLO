@@ -40,9 +40,9 @@ if __name__ == "__main__":
     train_dataset = CustomDataset(ROOT_DIR_TRAIN, ANNOTATION_FILE_TRAIN, transform=get_transform(train=True))
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, collate_fn=lambda x: tuple(zip(*x)))
 
-    # Evaluation dataset and loader
+    # Evaluation dataset and loader (use batch_size=1 for proper COCO evaluation)
     eval_dataset = CustomDataset(ROOT_DIR_EVAL, ANNOTATION_FILE_EVAL, transform=get_transform(train=False))
-    eval_loader = DataLoader(eval_dataset, batch_size=BATCH_SIZE, shuffle=False, collate_fn=lambda x: tuple(zip(*x)))
+    eval_loader = DataLoader(eval_dataset, batch_size=1, shuffle=False, collate_fn=lambda x: tuple(zip(*x)))
 
     # Model initialization
     model = get_model(NUM_CLASSES).to(DEVICE)
